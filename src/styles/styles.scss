@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap');
 @import "./variables.scss";
 
+html {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none
+}
+
 body {
     padding: 0;
     margin: 0;
 }
 
-.main-title {
-    font-family: 'Share', cursive;
-    color: $primaryColor;
+.fp-tableCell{
+    vertical-align: baseline;
 }
