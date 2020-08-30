@@ -1,0 +1,17 @@
+#spider {
+    animation: 3s linear infinite both swing;
+    transform-origin: top;
+    transform-box: fill-box;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotateZ(-10deg);
+    }
+    50% {
+        transform: rotateZ(10deg);
+    }
+    100% {
+        transform: rotateZ(-10deg);
+    }
+}

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap');
-@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import "./variables";
+@import "./animation";
 
 html {
     -webkit-touch-callout: none;
@@ -15,4 +17,64 @@ body {
 
 .fp-tableCell{
     vertical-align: baseline;
+}
+
+.draw {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    bottom: -5px;       
+    transform: scale(1.1);
+    transition: 1s filter;
+}
+
+.tree {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 53%;
+    z-index: 3;
+    transition: 1s filter;
+}
+
+.fp-viewing-Page2 .tree,
+.fp-viewing-Page4 .tree {
+    filter: brightness(.2);
+}
+
+.fp-viewing-Page2 .draw,
+.fp-viewing-Page4 .draw {
+    filter: brightness(.2);
+}
+
+.fp-viewing-Page2 #app::after,
+.fp-viewing-Page4 #app::after {
+    opacity: 1;
+}
+
+.sun {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-300px);
+    transition: 2s ease-in-out;
+}
+
+.fp-viewing-Page2 .sun,
+.fp-viewing-Page4 .sun {
+    top: 900px;
+    opacity: 0;
+}
+
+.fp-viewing-Page2 #owlseyes,
+.fp-viewing-Page2 #spidereyes,
+.fp-viewing-Page4 #owlseyes,
+.fp-viewing-Page4 #spidereyes {
+    opacity: 1;
+}
+
+#fullpage {
+    z-index: 9999;
 }
