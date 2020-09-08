@@ -157,30 +157,16 @@
             <a data-menuanchor="Page3" class="navigation__item" href="#Page3"></a>
             <a data-menuanchor="Page4" class="navigation__item" href="#Page4"></a>
         </div>
-
+        <!-- <div class="scroll"></div> -->
         <full-page :options="options" id="fullpage" ref="fullpage">
             <div class="section">
                 <h1 class="main-title">Portfolio</h1>
-                <div class="scroll">
-                    <svg width="26" height="51" viewBox="0 0 26 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g opacity="0.8" clip-path="url(#clip0)">
-                        <path d="M23.43 12.72C23.43 6.79951 18.6327 2 12.715 2C6.79727 2 2 6.79951 2 12.72V21.73C2 27.6505 6.79727 32.45 12.715 32.45C18.6327 32.45 23.43 27.6505 23.43 21.73V12.72Z" stroke="#552E78" stroke-width="4" stroke-miterlimit="10"/>
-                        <path d="M14.79 10.51C14.79 9.36677 13.8632 8.44 12.72 8.44C11.5768 8.44 10.65 9.36677 10.65 10.51V13.91C10.65 15.0532 11.5768 15.98 12.72 15.98C13.8632 15.98 14.79 15.0532 14.79 13.91V10.51Z" fill="#552E78"/>
-                        <path d="M20.78 40.21L16.75 44.46L12.72 48.7L8.67999 44.46L4.64999 40.21" stroke="#552E78" stroke-width="3" stroke-miterlimit="10"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0">
-                        <rect width="25.43" height="50.88" fill="white"/>
-                        </clipPath>
-                        </defs>
-                    </svg>
-                </div>
             </div>
             <div class="section">
-                <Letter />
+                <About />
             </div>
             <div class="section">
-                 <h1>Page 3</h1>
+                 <Works />
             </div>
             <div class="section">
                 <h1>Page 4</h1>
@@ -190,7 +176,8 @@
 </template>
 
 <script>
-import Letter from '@/components/Letter.vue';
+import About from '@/components/About.vue';
+import Works from '@/components/Works.vue';
 
 export default {
     name: "App",
@@ -205,7 +192,8 @@ export default {
         }
     },
     components: {
-        Letter,
+        About,
+        Works
     },
     methods: {
         parallax(e) {
@@ -249,28 +237,41 @@ export default {
 }
 
 .main-title {
-    font-family: 'Share', cursive;
-    text-align: center;
-    padding: 0;
-    margin-top: 160px;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Share';
     font-size: $mainTitleSize;
     color: $primaryColor;
     font-weight: normal;
-    margin-bottom: 0;
     opacity: .8;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding: 0;
+    letter-spacing: 15px;
+    margin: 0;
+    transition: 1s cubic-bezier(.42,.97,.52,1.49);
 }
 
-.scroll {
-    width: 100%;
-    text-align: center;
-    margin-top: 25px;
-}
+/* .scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 10001;
+    background-image: url('./assets/img/scroll.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 27px;
+    height: 50px;
+    transition: .3s opacity;
+} */
 
 #navigation {
     position: fixed;
     top: 50%;
     transform: translateY(-75px);
-    left: 50px;
+    right: 50px;
     z-index: 10000;
     display: flex;
     flex-direction: column;

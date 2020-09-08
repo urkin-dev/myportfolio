@@ -7,7 +7,11 @@ html {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
        -moz-user-select: none;
-            user-select: none
+            user-select: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
@@ -42,6 +46,7 @@ body {
     filter: brightness(.2);
 }
 
+// Darken 2 and 4 page
 .fp-viewing-Page2 .draw,
 .fp-viewing-Page4 .draw {
     filter: brightness(.2);
@@ -68,11 +73,40 @@ body {
     opacity: 0;
 }
 
+.fp-viewing-Page2 .main-title,
+.fp-viewing-Page3 .main-title,
+.fp-viewing-Page4 .main-title {
+    left: -90px;
+    opacity: 0;
+}
+
+.fp-viewing-Page2 .scroll,
+.fp-viewing-Page3 .scroll,
+.fp-viewing-Page4 .scroll {
+    opacity: 0;
+}
+
 .fp-viewing-Page2 #owlseyes,
 .fp-viewing-Page2 #spidereyes,
 .fp-viewing-Page4 #owlseyes,
 .fp-viewing-Page4 #spidereyes {
     opacity: 1;
+}
+
+.fp-viewing-Page3 .works {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.fp-viewing-Page4 .works {
+    transform: translateX(9999px);
+    opacity: 0;
+}
+
+.fp-viewing-Page3 .draw,
+.fp-viewing-Page3 .sun,
+.fp-viewing-Page3 .tree {
+    filter: brightness(1) blur(8px);
 }
 
 #fullpage {

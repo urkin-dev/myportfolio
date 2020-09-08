@@ -4,6 +4,16 @@
     transform-box: fill-box;
 }
 
+.works__col {
+    animation: 3s linear infinite both wind;
+    transform-origin: top;
+}
+
+.second-work {
+    animation: 4s linear infinite both inertia;
+    transform-origin: top;
+}
+
 @keyframes swing {
     0% {
         transform: rotateZ(-10deg);
@@ -13,5 +23,29 @@
     }
     100% {
         transform: rotateZ(-10deg);
+    }
+}
+
+@keyframes wind {
+    0% {
+        transform: rotateZ(-1deg);
+    }
+    50% {
+        transform: rotateZ(1deg);
+    }
+    100% {
+        transform: rotateZ(-1deg);
+    }
+}
+
+@keyframes inertia {
+    0% {
+        transform: rotateZ(-2deg);
+    }
+    50% {
+        transform: rotateZ(2deg);
+    }
+    100% {
+        transform: rotateZ(-2deg);
     }
 }

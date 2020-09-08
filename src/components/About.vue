@@ -61,7 +61,7 @@
 .letter {
     width: 570px;
     height: 680px;
-    margin: 5% auto;
+    margin: 6% auto;
     position: relative;
     perspective: 1000px;
 
