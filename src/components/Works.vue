@@ -3,31 +3,31 @@
         <div class="works__col">
             <a href="#" class="work">
                 <div class="work__img"></div>
-                <p class="work__title">My first work</p>
+                <p class="work__title">My 1 work</p>
             </a>
             <a href="#" class="work second-work">
                 <div class="work__img"></div>
-                <p class="work__title">My first work</p>
+                <p class="work__title">My 2 work</p>
             </a>
         </div>
         <div class="works__col">
             <a href="#" class="work">
                 <div class="work__img"></div>
-                <p class="work__title">My first work</p>
+                <p class="work__title">My 3 work</p>
             </a>
             <a href="#" class="work second-work">
                 <div class="work__img"></div>
-                <p class="work__title">My first work</p>
+                <p class="work__title">My 4 work</p>
             </a>
         </div>
         <div class="works__col">
             <a href="#" class="work">
                 <div class="work__img"></div>
-                <p class="work__title">My first work</p>
+                <p class="work__title">My 5 work</p>
             </a>
             <a href="#" class="work second-work">
                 <div class="work__img"></div>
-                <p class="work__title">My first work</p>
+                <p class="work__title">My 6 work</p>
             </a>
         </div>
     </div>
@@ -44,10 +44,9 @@
     width: 60%;
     height: 700px;
     margin-left: 7%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateX(-9999px);
-    opacity: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    transform: translateX(-13999px);
     transition: 3s;
 }
 
@@ -73,9 +72,9 @@
     margin-top: 30px;
 }
 
-.second-work::before {
+.work::before {
     content: '';
-    display: block;
+    display: none;
     position: absolute;
     top: -32px;
     left: 50%;
@@ -83,6 +82,10 @@
     transform: translateX(-1px);
     height: 32px;
     background-color: #fff;
+}
+
+.second-work::before {
+    display: block;
 }
 
 .work:first-child {
@@ -113,4 +116,67 @@
     color: #000;
     font-size: 18px;
 }
+
+@media screen and (max-width: 1500px) {
+    .works {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1290px) {
+    .works {
+        width: 85%;
+        margin-left: 4%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .works {
+        height: 100vh;
+        margin: 0 auto;
+        width: 70%;
+        grid-template-columns: 1fr;
+    }
+
+    .works__col {
+        flex-direction: row;
+        justify-content: space-between;
+        animation: none;
+    }
+
+    .works__col::before {
+        display: none;
+    }
+
+    .work::before {
+        display: block;
+    }
+
+    .work {
+        animation: none;
+        width: 250px;
+        height: 210px;
+    }
+
+    .work:first-child,
+    .second-work {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .works {
+        width: 90%;
+    }
+
+    .works__col {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .works__col:nth-child(3) {
+        display: none;
+    }
+}
+
 </style>

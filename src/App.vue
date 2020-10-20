@@ -155,21 +155,23 @@
             <a data-menuanchor="Page1" class="navigation__item active" href="#Page1"></a>
             <a data-menuanchor="Page2" class="navigation__item" href="#Page2"></a>
             <a data-menuanchor="Page3" class="navigation__item" href="#Page3"></a>
-            <a data-menuanchor="Page4" class="navigation__item" href="#Page4"></a>
         </div>
         <!-- <div class="scroll"></div> -->
         <full-page :options="options" id="fullpage" ref="fullpage">
             <div class="section">
-                <h1 class="main-title">Portfolio</h1>
+                <div class="main__content">
+                    <h1 class="main-title">Hi, I'm Ivan</h1>
+                    <p class="subtitle">Front-end and Back-end developer</p>
+                    <p class="desc">I want to help you build amazing web sites</p>
+                </div>
             </div>
             <div class="section">
-                <About />
+                <div class = "about__content">
+                    <About />
+                </div>
             </div>
             <div class="section">
                  <Works />
-            </div>
-            <div class="section">
-                <h1>Page 4</h1>
             </div>
         </full-page>
     </div>
@@ -184,10 +186,13 @@ export default {
     data() {
         return {
             options: {
-                anchors: ['Page1', 'Page2', 'Page3', 'Page4'],
+                anchors: ['Page1', 'Page2', 'Page3'],
                 menu: '#navigation',
                 keyboardScrolling: true,
-                css3:true
+                css3: true,
+                scrollingSpeed: 900,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease'
             }
         }
     },
@@ -236,23 +241,6 @@ export default {
     transition: opacity 1s ease-in-out;
 }
 
-.main-title {
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: 'Share';
-    font-size: $mainTitleSize;
-    color: $primaryColor;
-    font-weight: normal;
-    opacity: .8;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    padding: 0;
-    letter-spacing: 15px;
-    margin: 0;
-    transition: 1s cubic-bezier(.42,.97,.52,1.49);
-}
 
 /* .scroll {
     position: fixed;
@@ -296,6 +284,90 @@ export default {
 #spidereyes {
     opacity: 0;
     transition: opacity 1s;
+}
+
+.about__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main__content{ 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-title {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 6em;
+    color: #4B1F36;
+    font-weight: normal;
+    margin: 0;
+}
+
+.subtitle {
+    font-family: 'Handlee', cursive;
+    color: #fff;
+    font-weight: normal;
+    font-size: 3.3em;
+    text-align: center;
+    margin: 0;
+}
+
+.desc {
+    font-family: Share;
+    font-weight: normal;
+    font-size: 2.3em;
+    color: #4B1F36;
+    text-align: center;
+    margin: 0;
+}
+
+@media screen and (max-width: $media-breakpoint-md) {
+    .main-title {
+        font-size: 5em;
+    }
+
+    .subtitle {
+        font-size: 2.3em;
+    }
+
+    .desc {
+        font-size: 1.6em;
+    }
+}
+
+@media screen and (max-width: $media-breakpoint-sm) {
+    .main-title {
+        font-size: 4.8em;
+    }
+
+    .subtitle {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: $media-breakpoint-xs) {
+    .main-title {
+        font-size: 4em;
+    }
+
+    .subtitle {
+        font-size: 1.5em;
+    }
+
+    .desc {
+        font-size: 1.4em;
+    }
+    
+    #navigation {
+        display: none;
+    }
 }
 
 </style>

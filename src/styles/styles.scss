@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap');
 @import "./variables";
 @import "./animation";
 
@@ -19,7 +20,7 @@ body {
     margin: 0;
 }
 
-.fp-tableCell{
+.fp-tableCell {
     vertical-align: baseline;
 }
 
@@ -73,34 +74,18 @@ body {
     opacity: 0;
 }
 
-.fp-viewing-Page2 .main-title,
-.fp-viewing-Page3 .main-title,
-.fp-viewing-Page4 .main-title {
-    left: -90px;
-    opacity: 0;
-}
-
 .fp-viewing-Page2 .scroll,
-.fp-viewing-Page3 .scroll,
-.fp-viewing-Page4 .scroll {
+.fp-viewing-Page3 .scroll {
     opacity: 0;
 }
 
 .fp-viewing-Page2 #owlseyes,
-.fp-viewing-Page2 #spidereyes,
-.fp-viewing-Page4 #owlseyes,
-.fp-viewing-Page4 #spidereyes {
+.fp-viewing-Page2 #spidereyes {
     opacity: 1;
 }
 
 .fp-viewing-Page3 .works {
     transform: translateX(0px);
-    opacity: 1;
-}
-
-.fp-viewing-Page4 .works {
-    transform: translateX(9999px);
-    opacity: 0;
 }
 
 .fp-viewing-Page3 .draw,

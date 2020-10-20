@@ -1,2 +1,9 @@
 $primaryColor: #fff;
 $mainTitleSize: 8vh;
+
+// Малые девайсы («ландшафтные телефоны», < 576px)
+$media-breakpoint-xs: 600px;
+// Средние девайсы («таблетки», < 768px)
+$media-breakpoint-sm: 767.98px;
+// Большие девайсы (десктопы, < 992px)
+$media-breakpoint-md: 1080px;
