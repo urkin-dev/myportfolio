@@ -11,17 +11,12 @@
             <Tree class="treesvg" />
         </div>
 
-        <div id="navigation">
-            <a data-menuanchor="Page1" class="navigation__item active" href="#Page1"></a>
-            <a data-menuanchor="Page2" class="navigation__item" href="#Page2"></a>
-            <a data-menuanchor="Page3" class="navigation__item" href="#Page3"></a>
-        </div>
         <!-- <div class="scroll"></div> -->
         <full-page :options="options" id="fullpage" ref="fullpage">
             <div class="section">
                 <div class="main__content">
                     <h1 class="main-title">Hi, I'm Ivan</h1>
-                    <p class="subtitle">Front-end and Back-end developer</p>
+                    <p class="subtitle">Student from Moscow who want to work</p>
                     <p class="desc">I want to help you build amazing web sites</p>
                 </div>
             </div>
@@ -31,7 +26,12 @@
                 </div>
             </div>
             <div class="section">
-                 <Works />
+                <div class="slide">
+                    <Works :works='works_one' />
+                </div>
+                <div class="slide">
+                    <Works :works='works_two' />
+                </div>
             </div>
         </full-page>
     </div>
@@ -52,13 +52,88 @@ export default {
         return {
             options: {
                 anchors: ['Page1', 'Page2', 'Page3'],
-                menu: '#navigation',
                 keyboardScrolling: true,
                 css3: true,
                 scrollingSpeed: 900,
                 easing: 'easeInOutCubic',
                 easingcss3: 'ease',
-            }
+            },
+            works_one: [
+                {
+                    id: 1,
+                    title: 'ReactWave player',
+                    src: 'https://reactwave.herokuapp.com/',
+                    img: require('./assets/img/react-player.png')
+                },
+                {
+                    id: 2,
+                    title: 'Django Blog',
+                    src: 'blog.std-954.ist.mospolytech.ru',
+                    img: ''
+                },
+                {
+                    id: 3,
+                    title: 'Kanban board',
+                    src: 'http://kanban.std-954.ist.mospolytech.ru/',
+                    img: require('./assets/img/kanban.png')
+                },
+                {
+                    id: 4,
+                    title: 'Work title 4',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+                {
+                    id: 5,
+                    title: 'Work title 5',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+                {
+                    id: 6,
+                    title: 'Work title 6',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+            ],
+            works_two: [
+                {
+                    id: 1,
+                    title: 'Work title 7',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+                {
+                    id: 2,
+                    title: 'Work title 8',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+                {
+                    id: 3,
+                    title: 'Work title 9',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+                {
+                    id: 4,
+                    title: 'Work title 10',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+                {
+                    id: 5,
+                    title: 'Work title 11',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+                {
+                    id: 6,
+                    title: 'Work title 12',
+                    src: 'There\'s no src yet',
+                    img: ''
+                },
+            ]
         }
     },
     components: {
@@ -123,31 +198,6 @@ export default {
     transition: .3s opacity;
 } */
 
-#navigation {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-75px);
-    right: 50px;
-    z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-    justify-content: space-between;
-
-    .navigation__item {
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-color: #fff;
-        transition: transform .2s;
-        border-radius: 50%;
-    }
-
-    .active {
-        transform: scale(1.3);
-    }
-}
-
 .about__content {
     display: flex;
     justify-content: center;
@@ -188,47 +238,43 @@ export default {
         text-align: center;
         margin: 0;
     }
-}
 
-@media screen and (max-width: $media-breakpoint-md) {
-    .main-title {
-        font-size: 5em;
+    @media screen and (max-width: $media-breakpoint-md) {
+        .main-title {
+            font-size: 5em;
+        }
+
+        .subtitle {
+            font-size: 2.3em;
+        }
+
+        .desc {
+            font-size: 1.6em;
+        }
     }
 
-    .subtitle {
-        font-size: 2.3em;
+    @media screen and (max-width: $media-breakpoint-sm) {
+        .main-title {
+            font-size: 4.8em;
+        }
+
+        .subtitle {
+            font-size: 2em;
+        }
     }
 
-    .desc {
-        font-size: 1.6em;
-    }
-}
+    @media screen and (max-width: $media-breakpoint-xs) {
+        .main-title {
+            font-size: 4em;
+        }
 
-@media screen and (max-width: $media-breakpoint-sm) {
-    .main-title {
-        font-size: 4.8em;
-    }
+        .subtitle {
+            font-size: 1.5em;
+        }
 
-    .subtitle {
-        font-size: 2em;
-    }
-}
-
-@media screen and (max-width: $media-breakpoint-xs) {
-    .main-title {
-        font-size: 4em;
-    }
-
-    .subtitle {
-        font-size: 1.5em;
-    }
-
-    .desc {
-        font-size: 1.4em;
-    }
-    
-    #navigation {
-        display: none;
+        .desc {
+            font-size: 1.4em;
+        }
     }
 }
 

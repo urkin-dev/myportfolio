@@ -20,6 +20,3 @@ module.exports = {
       })
   }
 };
-
-// TODO: Change 3th page
-// TODO: Write a text and current skills

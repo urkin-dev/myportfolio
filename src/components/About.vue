@@ -10,12 +10,19 @@
             <div class="position">
                 <h3 class="position__title">Web developer</h3>
             </div>
-            <div class="skills">
+            <div class="contacts">
+                <div class="contacts__content">
+                    Here will be my contacts
+                </div>
             </div>
             <button @click="showBack" class="letter-front__next-button"></button>
         </div>
         <div class="letter-back">
-                <button @click="showFront" class="letter-front__prev-button"></button>
+            <div class="letter-back__content">
+                Here will be info about me <br>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel saepe quibusdam vitae nemo nulla! Magni recusandae eligendi optio placeat sed a neque nulla cum. Iure soluta voluptate molestias vero cumque?
+            </div>
+            <button @click="showFront" class="letter-front__prev-button"></button>
         </div>
     </div>
 </template>
@@ -58,6 +65,8 @@ import CurveName from '@/assets/img/CurveName.svg?inline'
     width: 570px;
     height: 680px;
     transform-style: preserve-3d;
+    font-family: 'Concert One';
+
 
     &-front, &-back {
         position: absolute;
@@ -105,13 +114,22 @@ import CurveName from '@/assets/img/CurveName.svg?inline'
             color: #31152B; 
         }
 
-        .skills {
+        .contacts {
             width: 320px;
             height: 250px;
             background-image: url("../assets/img/papperPiece.svg");
             background-repeat: no-repeat;
             background-size: 100%;
             margin: 0 auto;
+            
+            &__content {
+                //Temp
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
         &__title {
@@ -147,6 +165,10 @@ import CurveName from '@/assets/img/CurveName.svg?inline'
         background-image: url("../assets/img/letterBack(2).svg");
         background-size: 100%;
         background-repeat: no-repeat;
+
+        &__content {
+            padding: 20px 50px;
+        }
     }
 
     &-front__next-button,
@@ -176,39 +198,78 @@ import CurveName from '@/assets/img/CurveName.svg?inline'
         bottom: 20px;
         transform: scaleX(-1);
     }
+
+    @media screen and (max-width: 767.98px) {
+        .letter-front__title {
+            font-size: 40px;
+        }
+
+        .letter-front__name {
+            width: 120px;
+        }
+
+        .letter-front__photo {
+            width: 200px;
+            height: 200px;
+        } 
+
+        .position {
+            height: 40px;
+            width: 260px;
+        }
+
+        .position__title {
+            font-size: 20px;
+        }
+
+        .contacts {
+            width: 280px;
+            height: 210px;
+        }
+    }
+
+    @media screen and (max-width: 514px) {
+        .letter-front__title {
+            font-size: 20px;
+            line-height: 50px;
+        }
+
+        .letter-front__name {
+            width: 80px;
+        }
+
+        .letter-front__photo {
+            width: 150px;
+            height: 150px;
+        } 
+
+        .position {
+            height: 30px;
+            width: 200px;
+        }
+
+        .position__title {
+            font-size: 17px;
+        }
+
+        .contacts {
+            width: 210px;
+            height: 250px;
+        }
+
+        .letter-front__next-button,
+        .letter-front__prev-button {
+            width: 20px;
+            height: 30px;
+            bottom: 45px;
+        }
+    }
 }
 
 @media screen and (max-width: 767.98px) {
     .letter {
         width: 480px;
         height: 590px;
-    }
-
-    .letter-front__title {
-        font-size: 40px;
-    }
-
-    .letter-front__name {
-        width: 120px;
-    }
-
-    .letter-front__photo {
-        width: 200px;
-        height: 200px;
-    } 
-
-    .position {
-        height: 40px;
-        width: 260px;
-    }
-
-    .position__title {
-        font-size: 20px;
-    }
-
-    .skills {
-        width: 280px;
-        height: 210px;
     }
 }
 
@@ -217,40 +278,6 @@ import CurveName from '@/assets/img/CurveName.svg?inline'
         width: 350px;
         height: 460px;
     }
-
-    .letter-front__title {
-        font-size: 20px;
-        line-height: 50px;
-    }
-
-    .letter-front__name {
-        width: 80px;
-    }
-
-    .letter-front__photo {
-        width: 150px;
-        height: 150px;
-    } 
-
-    .position {
-        height: 30px;
-        width: 200px;
-    }
-
-    .position__title {
-        font-size: 17px;
-    }
-
-    .skills {
-        width: 210px;
-        height: 250px;
-    }
-
-    .letter-front__next-button,
-    .letter-front__prev-button {
-        width: 20px;
-        height: 30px;
-        bottom: 45px;
-    }
 }
+
 </style>

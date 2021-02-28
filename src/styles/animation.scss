@@ -25,27 +25,3 @@
         transform: rotateZ(-10deg);
     }
 }
-
-@keyframes wind {
-    0% {
-        transform: rotateZ(-1deg);
-    }
-    50% {
-        transform: rotateZ(1deg);
-    }
-    100% {
-        transform: rotateZ(-1deg);
-    }
-}
-
-@keyframes inertia {
-    0% {
-        transform: rotateZ(-2deg);
-    }
-    50% {
-        transform: rotateZ(2deg);
-    }
-    100% {
-        transform: rotateZ(-2deg);
-    }
-}
