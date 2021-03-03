@@ -68,8 +68,8 @@ export default {
                 {
                     id: 2,
                     title: 'Django Blog',
-                    src: 'blog.std-954.ist.mospolytech.ru',
-                    img: ''
+                    src: 'http://blog.std-954.ist.mospolytech.ru/',
+                    img: require('./assets/img/blog.png')
                 },
                 {
                     id: 3,
@@ -79,9 +79,9 @@ export default {
                 },
                 {
                     id: 4,
-                    title: 'Work title 4',
-                    src: 'There\'s no src yet',
-                    img: ''
+                    title: 'Grip',
+                    src: 'https://gripsite.herokuapp.com/',
+                    img: require('./assets/img/grip.png')
                 },
                 {
                     id: 5,
