@@ -10,15 +10,75 @@
 				<h3 class="position__title">Web developer</h3>
 			</div>
 			<div class="contacts">
-				<div class="contacts__content">Here will be my contacts</div>
+				<p class="contacts__title">Contacts</p>
+				<div class="contacts__content">
+					<p>Telegram: @yurk1n</p>
+					<p>Email: <a href="mailto:yurkin.ivan5456@gmail.com">yurkin.ivan5456@gmail.com</a></p>
+					<p>Github: <a href="https://github.com/urkin-dev" target="_blank">urkin-dev</a></p>
+				</div>
+
+				<p class="contacts__title">Tech stack I use</p>
+				<div class="contacts__tech-stack">
+					<span
+						class="iconify"
+						data-icon="akar-icons:react-fill"
+						style="color: #333"
+						data-width="30"
+						data-height="30"
+					/>
+					<span
+						class="iconify"
+						data-icon="akar-icons:javascript-fill"
+						style="color: #333"
+						data-width="30"
+						data-height="30"
+					/>
+					<span
+						class="iconify"
+						data-icon="akar-icons:django-fill"
+						style="color: #333"
+						data-width="30"
+						data-height="30"
+					/>
+					<span class="iconify" data-icon="cib:typescript" style="color: #333" data-width="30" data-height="30" />
+					<span
+						class="iconify"
+						data-icon="tabler:brand-react-native"
+						style="color: #333"
+						data-width="30"
+						data-height="30"
+					/>
+					<span class="iconify" data-icon="akar-icons:vue-fill" style="color: #333" data-width="30" data-height="30" />
+				</div>
 			</div>
 			<button @click="showBack" class="letter-front__next-button"></button>
 		</div>
 		<div class="letter-back">
 			<div class="letter-back__content">
-				Here will be info about me <br />
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel saepe quibusdam vitae nemo nulla! Magni recusandae
-				eligendi optio placeat sed a neque nulla cum. Iure soluta voluptate molestias vero cumque?
+				<div class="short">
+					I'm a web developer based in Moscow with 4 years of experience in the web industry. <br />
+					I'm currently studing in university and working on react-native mobile application.
+				</div>
+				<p class="letter-back__title">A little bit about me</p>
+				<div class="long">
+					It's been 4 years since I decided to become web developer. I was lucky to find out this is a job I love, a job
+					that I spend time on, even outside of work hours.<br />
+					This isn't how I started though, in the beginning, I struggled hard.<br />
+					I started to learn web development when I was at school. It was last year of my studying and I didn't have
+					much time on learning new things. Right after school I learned a lot, but it always felt like I don't know
+					enough. And when I started studying in tech university and saw other people who know web development I
+					understood that I'm too far from real world of programming. <br />
+					At that time I learned a lot of useful and unnecessary things but all this was completely unproductive because
+					I didn't work on my practice until the end of second year. <br />
+					In my second year I started to learn React and Angular. It didn't really went well with Angular, but React
+					became my favorite framework. I was invited to work on big university project with others web developers who
+					already have experience. Thanks to this project I learned how to work with team and how important soft skills
+					are for developer. I learned how to write clean and maintainable code with React and Typescript. <br />
+					After the university project I was invited to work on react native mobile application. It was new to me and I
+					struggled a lot before I started to work. Despite of my fears I was really happy with this opportunity and I
+					learned new stuff really quick. <br />
+					I'm still working on this project and trying to get as much expeience as I can. <br />
+				</div>
 			</div>
 			<button @click="showFront" class="letter-front__prev-button"></button>
 		</div>
@@ -80,6 +140,24 @@ export default {
 		backface-visibility: hidden;
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
+		font-size: 16px;
+
+		&__title {
+			margin: 0;
+			padding: 0;
+			margin-top: 5px;
+			font-size: 17px;
+			margin-bottom: 5px;
+			color: rgb(73, 73, 73);
+		}
+
+		.short {
+			color: #000;
+		}
+
+		.long {
+			color: rgb(73, 73, 73);
+		}
 	}
 
 	&-front {
@@ -115,18 +193,43 @@ export default {
 		.contacts {
 			width: 320px;
 			height: 250px;
+			max-width: 320px;
+			max-height: 250px;
+			overflow: hidden;
 			background-image: url('../assets/img/papperPiece.svg');
 			background-repeat: no-repeat;
 			background-size: 100%;
 			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			padding: 40px;
+
+			&__title {
+				padding: 0;
+				font-size: 18px;
+				margin: 0;
+				color: #222;
+			}
 
 			&__content {
-				//Temp
 				width: 100%;
-				height: 100%;
 				display: flex;
-				justify-content: center;
-				align-items: center;
+				flex-direction: column;
+				font-size: 16px;
+				color: #333;
+				margin-bottom: 10px;
+				margin-top: 10px;
+
+				p {
+					margin: 0;
+				}
+			}
+
+			&__tech-stack {
+				margin-top: 10px;
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
 			}
 		}
 
@@ -165,7 +268,7 @@ export default {
 		background-repeat: no-repeat;
 
 		&__content {
-			padding: 20px 50px;
+			padding: 20px 20px 50px 20px;
 		}
 	}
 
@@ -197,6 +300,7 @@ export default {
 		transform: scaleX(-1);
 	}
 
+	/* TODO: Refactor: Make theme */
 	@media screen and (max-width: 767.98px) {
 		.letter-front__title {
 			font-size: 40px;
@@ -223,6 +327,10 @@ export default {
 		.contacts {
 			width: 280px;
 			height: 210px;
+
+			&__content {
+				font-size: 12px;
+			}
 		}
 	}
 
@@ -253,6 +361,21 @@ export default {
 		.contacts {
 			width: 210px;
 			height: 250px;
+			padding: 25px;
+
+			&__title {
+				font-size: 12px;
+			}
+
+			&__content {
+				font-size: 10px;
+				margin-top: 3px;
+				margin-bottom: 5px;
+			}
+
+			&__tech-stack {
+				margin-top: 3px;
+			}
 		}
 
 		.letter-front__next-button,

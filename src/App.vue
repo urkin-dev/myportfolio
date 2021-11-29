@@ -16,8 +16,8 @@
 			<div class="section">
 				<div class="main__content">
 					<h1 class="main-title">Hi, I'm Ivan</h1>
-					<p class="subtitle">Student from Moscow who want to work</p>
-					<p class="desc">I want to help you build amazing web sites</p>
+					<p class="subtitle">Frontend developer who loves his job</p>
+					<p class="desc">I'm trying my best to be better with every day</p>
 				</div>
 			</div>
 			<div class="section">
@@ -167,7 +167,7 @@ export default {
 @import './styles/styles.scss';
 
 #app {
-	background-image: url('./assets/img/Back.svg');
+	background-image: url('./assets/img/back.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 100%;
