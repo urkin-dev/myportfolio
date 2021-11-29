@@ -1,12 +1,12 @@
-import Vue from "vue";
-import App from "./App.vue";
+import Vue from 'vue'
+import App from './App.vue'
 import './styles/styles.scss'
 import VueFullPage from 'vue-fullpage.js'
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
-Vue.use(VueFullPage);
+Vue.use(VueFullPage)
 
 new Vue({
-  render: h => h(App)
-}).$mount("#app");
+	render: (h) => h(App)
+}).$mount('#app')

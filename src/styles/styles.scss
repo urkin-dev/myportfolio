@@ -1,106 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap');
-@import "./variables";
-@import "./animation";
+@import './variables';
+@import './animation';
 
 html {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 .fp-tableCell {
-    vertical-align: baseline;
+	vertical-align: baseline;
 }
 
 .draw {
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    bottom: -5px;       
-    transform: scale(1.1);
-    transition: 1s filter;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	bottom: -5px;
+	transform: scale(1.1);
+	transition: 1s filter;
 }
 
 .tree {
-    position: absolute;
-    bottom: -5px;
-    right: 0;
-    width: 53%;
-    z-index: 3;
-    transition: 1s filter;
+	position: absolute;
+	bottom: -5px;
+	right: 0;
+	width: 53%;
+	z-index: 3;
+	transition: 1s filter;
 }
 
 .fp-viewing-Page2 .tree,
 .fp-viewing-Page4 .tree {
-    filter: brightness(.2);
+	filter: brightness(0.2);
 }
 
 // Darken 2 and 4 page
 .fp-viewing-Page2 .draw,
 .fp-viewing-Page4 .draw {
-    filter: brightness(.2);
+	filter: brightness(0.2);
 }
 
 .fp-viewing-Page2 #app::after,
 .fp-viewing-Page4 #app::after {
-    opacity: 1;
+	opacity: 1;
 }
 
 .sun {
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-300px);
-    transition: 2s ease-in-out;
+	position: fixed;
+	width: 600px;
+	height: 600px;
+	top: -80px;
+	left: 50%;
+	transform: translateX(-300px);
+	transition: 2s ease-in-out;
 }
 
 .fp-viewing-Page2 .sun,
 .fp-viewing-Page4 .sun {
-    top: 900px;
-    opacity: 0;
+	top: 900px;
+	opacity: 0;
 }
 
 .fp-viewing-Page2 #owlseyes,
 .fp-viewing-Page2 #spidereyes {
-    opacity: 1;
+	opacity: 1;
 }
 
 .fp-viewing-Page3-0 .draw,
 .fp-viewing-Page3-0 .sun,
 .fp-viewing-Page3-0 .tree {
-    filter: brightness(1) blur(8px);
+	filter: brightness(1) blur(8px);
 }
 
 .fp-viewing-Page3-1 .draw,
 .fp-viewing-Page3-1 .sun,
 .fp-viewing-Page3-1 .tree {
-    filter: brightness(1) blur(8px);
+	filter: brightness(1) blur(8px);
 }
 
 #fullpage {
-    z-index: 9999;
+	z-index: 9999;
 }
 
 .fp-controlArrow.fp-next {
-    border-width: 25px 0 25px 30px;
-    right: 40px;
+	border-width: 25px 0 25px 30px;
+	right: 40px;
 }
 
 .fp-controlArrow.fp-prev {
-    left: 40px;
-    border-width: 25px 30px 25px 0;
+	left: 40px;
+	border-width: 25px 30px 25px 0;
 }

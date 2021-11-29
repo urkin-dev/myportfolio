@@ -1,27 +1,27 @@
 #spider {
-    animation: 3s linear infinite both swing;
-    transform-origin: top;
-    transform-box: fill-box;
+	animation: 3s linear infinite both swing;
+	transform-origin: top;
+	transform-box: fill-box;
 }
 
 .works__col {
-    animation: 3s linear infinite both wind;
-    transform-origin: top;
+	animation: 3s linear infinite both wind;
+	transform-origin: top;
 }
 
 .second-work {
-    animation: 4s linear infinite both inertia;
-    transform-origin: top;
+	animation: 4s linear infinite both inertia;
+	transform-origin: top;
 }
 
 @keyframes swing {
-    0% {
-        transform: rotateZ(-10deg);
-    }
-    50% {
-        transform: rotateZ(10deg);
-    }
-    100% {
-        transform: rotateZ(-10deg);
-    }
+	0% {
+		transform: rotateZ(-10deg);
+	}
+	50% {
+		transform: rotateZ(10deg);
+	}
+	100% {
+		transform: rotateZ(-10deg);
+	}
 }
