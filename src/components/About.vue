@@ -5,7 +5,13 @@
 			<div class="letter-front__name">
 				<CurveName />
 			</div>
-			<div class="letter-front__photo"></div>
+			<div class="letter-front__photo">
+				<img
+					src="../assets/img/avatar.png"
+					alt="Avatar
+				"
+				/>
+			</div>
 			<div class="position">
 				<h3 class="position__title">Web developer</h3>
 			</div>
@@ -55,30 +61,25 @@
 		</div>
 		<div class="letter-back">
 			<div class="letter-back__content">
-				<div class="short">
-					I'm a web developer based in Moscow with 4 years of experience in the web industry. <br />
-					I'm currently studing in university and working on react-native mobile application.
-				</div>
-				<p class="letter-back__title">A little bit about me</p>
-				<div class="long">
-					It's been 4 years since I decided to become web developer. I was lucky to find out this is a job I love, a job
-					that I spend time on, even outside of work hours.<br />
-					This isn't how I started though, in the beginning, I struggled hard.<br />
-					I started to learn web development when I was at school. It was last year of my studying and I didn't have
-					much time on learning new things. Right after school I learned a lot, but it always felt like I don't know
-					enough. And when I started studying in tech university and saw other people who know web development I
-					understood that I'm too far from real world of programming. <br />
-					At that time I learned a lot of useful and unnecessary things but all this was completely unproductive because
-					I didn't work on my practice until the end of second year. <br />
-					In my second year I started to learn React and Angular. It didn't really went well with Angular, but React
-					became my favorite framework. I was invited to work on big university project with others web developers who
-					already have experience. Thanks to this project I learned how to work with team and how important soft skills
-					are for developer. I learned how to write clean and maintainable code with React and Typescript. <br />
-					After the university project I was invited to work on react native mobile application. It was new to me and I
-					struggled a lot before I started to work. Despite of my fears I was really happy with this opportunity and I
-					learned new stuff really quick. <br />
-					I'm still working on this project and trying to get as much expeience as I can. <br />
-				</div>
+				<p class="letter-back__title">Hello there!</p>
+				<ul>
+					<li>I'm Ivan, a Frontend developer</li>
+					<li>Working on a react native mobile application</li>
+					<li>I'm based in Russia, Moscow</li>
+					<li>I'm currently learning unit testing and test driven development</li>
+					<li>I'm on third year of Moscow Politech university</li>
+					<li>I love read books and tech articles</li>
+					<li>I have strong positive mindset and clear objective what I'm trying to achieve</li>
+					<li>I have passion for an organized workflow</li>
+				</ul>
+				<p class="letter-back__title">What do I do well</p>
+				<ul>
+					<li><strong>Frontend: </strong>React, React Native, Typescript, Javascript</li>
+					<li><strong>Backend: </strong>Django, Node</li>
+					<li><strong>Environment: </strong>GIT, GitLab, GitHub</li>
+					<li><strong>Data: </strong>PostgreSQL, SQL Server</li>
+					<li><strong>Design: </strong>Figma, Adobe Illustrator</li>
+				</ul>
 			</div>
 			<button @click="showFront" class="letter-front__prev-button"></button>
 		</div>
@@ -142,21 +143,24 @@ export default {
 		-webkit-backface-visibility: hidden;
 		font-size: 16px;
 
+		.quote {
+			margin-top: auto;
+			font-size: 20px;
+			color: rgb(44, 44, 44);
+		}
+
 		&__title {
 			margin: 0;
 			padding: 0;
 			margin-top: 5px;
-			font-size: 17px;
+			font-size: 24px;
 			margin-bottom: 5px;
-			color: rgb(73, 73, 73);
-		}
-
-		.short {
 			color: #000;
 		}
 
-		.long {
-			color: rgb(73, 73, 73);
+		ul {
+			padding: 0;
+			padding-left: 20px;
 		}
 	}
 
@@ -258,6 +262,14 @@ export default {
 			background-repeat: no-repeat;
 			background-size: 100%;
 			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				width: 185px;
+				height: 182.5px;
+			}
 		}
 	}
 
@@ -268,7 +280,12 @@ export default {
 		background-repeat: no-repeat;
 
 		&__content {
-			padding: 20px 20px 50px 20px;
+			padding: 20px 50px;
+			height: 100%;
+			width: 100%;
+			padding-bottom: 90px;
+			display: flex;
+			flex-direction: column;
 		}
 	}
 
@@ -313,6 +330,11 @@ export default {
 		.letter-front__photo {
 			width: 200px;
 			height: 200px;
+
+			img {
+				width: 150px;
+				height: 150px;
+			}
 		}
 
 		.position {
@@ -347,6 +369,12 @@ export default {
 		.letter-front__photo {
 			width: 150px;
 			height: 150px;
+
+			img {
+				margin-top: 15px;
+				width: 110px;
+				height: 110px;
+			}
 		}
 
 		.position {

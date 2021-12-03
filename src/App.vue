@@ -29,9 +29,6 @@
 				<div class="slide">
 					<Works :works="works_one" />
 				</div>
-				<div class="slide">
-					<Works :works="works_two" />
-				</div>
 			</div>
 		</full-page>
 	</div>
@@ -62,76 +59,49 @@ export default {
 				{
 					id: 1,
 					title: 'ReactWave player',
+					description:
+						'Lofi music player. I created it when I started to learn React. All music taken from chillhop.com',
 					src: 'https://reactwave.herokuapp.com/',
 					img: require('./assets/img/react-player.png')
 				},
 				{
 					id: 2,
-					title: 'Django Blog',
-					src: 'http://blog.std-954.ist.mospolytech.ru/',
-					img: require('./assets/img/blog.png')
+					title: 'Weatherd',
+					description:
+						'I created this project to practice new Redux-Toolkit. Weatherd take all data from API OpenWeather.',
+					src: 'https://urkin-dev.github.io/weatherd/',
+					img: require('./assets/img/weatherd.png')
 				},
 				{
 					id: 3,
-					title: 'Kanban board',
-					src: 'http://kanban.std-954.ist.mospolytech.ru/',
-					img: require('./assets/img/kanban.png')
-				},
-				{
-					id: 4,
 					title: 'Grip',
+					description:
+						"Just a lending website. When I was learning React, I decided to build something with cool animation. Here's the result",
 					src: 'https://gripsite.herokuapp.com/',
 					img: require('./assets/img/grip.png')
 				},
 				{
-					id: 5,
-					title: 'Work title 5',
-					src: "There's no src yet",
-					img: ''
-				},
-				{
-					id: 6,
-					title: 'Work title 6',
-					src: "There's no src yet",
-					img: ''
-				}
-			],
-			works_two: [
-				{
-					id: 1,
-					title: 'Work title 7',
-					src: "There's no src yet",
-					img: ''
-				},
-				{
-					id: 2,
-					title: 'Work title 8',
-					src: "There's no src yet",
-					img: ''
-				},
-				{
-					id: 3,
-					title: 'Work title 9',
-					src: "There's no src yet",
-					img: ''
-				},
-				{
 					id: 4,
-					title: 'Work title 10',
-					src: "There's no src yet",
-					img: ''
+					title: 'Time Museum in Decetraland Metaverse',
+					description:
+						'This project was created for the Maff hackaton dedicated to metauniverses. We used decentraland to build it. This project was ranked top 6',
+					src: 'https://time-museum-tau.vercel.app',
+					img: require('./assets/img/time-museum.png')
 				},
 				{
 					id: 5,
-					title: 'Work title 11',
-					src: "There's no src yet",
-					img: ''
+					title: 'University project, Fizruk',
+					description:
+						"I'm still working on this project refactor. We created this project for the department of physical education at my university. We wanted to create a project that would be easy to maintain and update",
+					src: 'http://fizruk.std-670.ist.mospolytech.ru/',
+					img: require('./assets/img/Fizrruk.png')
 				},
 				{
 					id: 6,
-					title: 'Work title 12',
-					src: "There's no src yet",
-					img: ''
+					title: 'poVoenke',
+					description: "I'm currently working at this moblie application as junior react-native developer.",
+					src: 'https://play.google.com/store/apps/details?id=ru.povoenke',
+					img: require('./assets/img/povoenke.png')
 				}
 			]
 		}

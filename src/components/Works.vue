@@ -1,23 +1,48 @@
 <template>
 	<div class="works-wrapper">
 		<div class="works">
-			<a target="_blank" class="work" v-for="work in works" :key="work.id" :href="work.src">
+			<a class="work" v-for="work in works" :key="work.id" @click="() => toggle(work.id)">
 				<div class="work__img">
 					<img :src="work.img" alt="work image" />
 				</div>
 				<p class="work__title">{{ work.title }}</p>
 			</a>
 		</div>
+		<transition name="fade">
+			<div class="modal-container" v-if="isModalVisible" v-on:click.self="() => toggle(currentWork.id)">
+				<Modal :work="currentWork" v-if="isModalVisible" />
+			</div>
+		</transition>
 	</div>
 </template>
 
 <script>
+import Modal from './Modal.vue'
+
 export default {
 	name: `Works`,
+	data() {
+		return {
+			isModalVisible: false,
+			currentWork: null
+		}
+	},
+	components: {
+		Modal
+	},
 	props: {
 		works: {
 			type: Array,
 			default: () => []
+		}
+	},
+	methods: {
+		toggle(id) {
+			this.currentWork = this.works.find((work) => work.id === id)
+
+			if (this.currentWork) {
+				this.isModalVisible ? (this.isModalVisible = false) : (this.isModalVisible = true)
+			}
 		}
 	}
 }
@@ -27,6 +52,29 @@ export default {
 a {
 	text-decoration: none;
 	color: #fff;
+}
+
+.fade-enter-active {
+	transition: all 0.3s;
+}
+.fade-leave-active {
+	transition: all 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}
+
+.modal-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .works-wrapper {
@@ -46,8 +94,11 @@ a {
 
 	.work {
 		background-color: #fff;
+		font-family: 'Handlee', sans-serif;
+		font-weight: 600;
 		width: 290px;
 		height: 250px;
+		cursor: pointer;
 		border: 1px solid #3f3e43;
 		display: flex;
 		flex-direction: column;
@@ -58,9 +109,8 @@ a {
 		&__img {
 			display: block;
 			width: 90%;
-			height: 330px;
+			height: 80%;
 			background-color: #3f3e43;
-
 			img {
 				width: 100%;
 				object-fit: cover;
@@ -72,9 +122,12 @@ a {
 		}
 
 		&__title {
-			text-align: center;
 			color: #000;
+			height: 20%;
+			text-align: center;
 			font-size: 18px;
+			margin-top: 10px;
+			flex: 1;
 		}
 	}
 
