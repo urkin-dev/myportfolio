@@ -16,8 +16,8 @@
 			<div class="section">
 				<div class="main__content">
 					<h1 class="main-title">Hi, I'm Ivan</h1>
-					<p class="subtitle">Frontend developer who loves his job</p>
-					<p class="desc">I'm trying my best to be better with every day</p>
+					<p class="subtitle">Frontend/Mobile Developer</p>
+					<p class="desc">I'm always looking for a new challenge</p>
 				</div>
 			</div>
 			<div class="section">
@@ -191,7 +191,7 @@ export default {
 	.desc {
 		font-family: Share;
 		font-weight: normal;
-		font-size: 2.3em;
+		font-size: 1.8em;
 		color: #4b1f36;
 		text-align: center;
 		margin: 0;

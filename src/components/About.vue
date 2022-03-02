@@ -63,20 +63,22 @@
 			<div class="letter-back__content">
 				<p class="letter-back__title">Hello there!</p>
 				<ul>
-					<li>I'm Ivan, a Frontend developer</li>
-					<li>Working on a react native mobile application</li>
+					<li>
+						I'm Ivan. I consider myself as a frontend developer but I also have expirience in mobile & backend
+						development
+					</li>
 					<li>I'm based in Russia, Moscow</li>
-					<li>I'm currently learning unit testing and test driven development</li>
+					<li>Currently working on a react-native mobile application as junior frontend developer</li>
 					<li>I'm on third year of Moscow Politech university</li>
+					<li>I'm always open to new opportunities and challenges</li>
 					<li>I love read books and tech articles</li>
-					<li>I have strong positive mindset and clear objective what I'm trying to achieve</li>
-					<li>I have passion for an organized workflow</li>
+					<li>I'm confident in my technical English skills (pls don't ask me to speak)</li>
 				</ul>
-				<p class="letter-back__title">What do I do well</p>
+				<p class="letter-back__title">Hard skills</p>
 				<ul>
-					<li><strong>Frontend: </strong>React, React Native, Typescript, Javascript</li>
+					<li><strong>Frontend: </strong>React.js, Typescript, Vue.js, MobX, Redux (redux-toolkit), HTML&CSS</li>
 					<li><strong>Backend: </strong>Django, Node</li>
-					<li><strong>Environment: </strong>GIT, GitLab, GitHub</li>
+					<li><strong>Environment: </strong>GitLab, GitHub</li>
 					<li><strong>Data: </strong>PostgreSQL, SQL Server</li>
 					<li><strong>Design: </strong>Figma, Adobe Illustrator</li>
 				</ul>
@@ -142,12 +144,6 @@ export default {
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		font-size: 16px;
-
-		.quote {
-			margin-top: auto;
-			font-size: 20px;
-			color: rgb(44, 44, 44);
-		}
 
 		&__title {
 			margin: 0;
@@ -234,6 +230,13 @@ export default {
 				display: flex;
 				justify-content: space-between;
 				width: 100%;
+
+				@media screen and (max-width: 514px) {
+					svg {
+						width: 20px;
+						height: 20px;
+					}
+				}
 			}
 		}
 
@@ -362,7 +365,19 @@ export default {
 			line-height: 50px;
 		}
 
-		.letter-front__name {
+		.letter-back {
+			font-size: 12px;
+
+			&__title {
+				font-size: 16px;
+			}
+
+			ul {
+				margin: 0;
+			}
+		}
+
+		.letter-back__ .letter-front__name {
 			width: 80px;
 		}
 

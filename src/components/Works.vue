@@ -1,11 +1,8 @@
 <template>
 	<div class="works-wrapper">
 		<div class="works">
-			<a class="work" v-for="work in works" :key="work.id" @click="() => toggle(work.id)">
-				<div class="work__img">
-					<img :src="work.img" alt="work image" />
-				</div>
-				<p class="work__title">{{ work.title }}</p>
+			<a class="work" v-for="work in works" :key="work.id">
+				<img :src="work.img" alt="work image" @click="() => toggle(work.id)" />
 			</a>
 		</div>
 		<transition name="fade">
@@ -74,7 +71,7 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 .works-wrapper {
@@ -87,92 +84,43 @@ a {
 
 .works {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	justify-items: center;
-	width: 80%;
-	row-gap: 10px;
+	grid-auto-flow: column;
+	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+	gap: 10px;
+	height: 100%;
+	padding: 80px;
+
+	&:hover .work:not(:hover) {
+		filter: brightness(0.5);
+	}
 
 	.work {
-		background-color: #fff;
-		font-family: 'Handlee', sans-serif;
-		font-weight: 600;
-		width: 290px;
-		height: 250px;
-		cursor: pointer;
-		border: 1px solid #3f3e43;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding-top: 8px;
 		text-decoration: none;
+		height: 100%;
+		overflow: hidden;
+		transition: 0.3s;
 
-		&__img {
-			display: block;
-			width: 90%;
-			height: 80%;
-			background-color: #3f3e43;
-			img {
-				width: 100%;
-				object-fit: cover;
-				height: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-		}
-
-		&__title {
-			color: #000;
-			height: 20%;
-			text-align: center;
-			font-size: 18px;
-			margin-top: 10px;
-			flex: 1;
-		}
-	}
-
-	@media screen and (max-width: 790px) {
-		.work {
-			width: 220px;
-			height: 200px;
-		}
-	}
-
-	@media screen and (max-width: 640px) {
-		.work {
-			height: 120px;
+		img {
 			width: 100%;
-			padding: 10px;
-			border: 2px solid #3f3e43;
-
-			&__img {
-				width: 100%;
-			}
-
-			&__title {
-				display: none;
-			}
+			height: 100%;
+			object-fit: cover;
+			border-radius: 5px;
+			cursor: pointer;
 		}
 	}
 }
 
 @media screen and (max-width: 1100px) {
 	.works {
-		width: 90%;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+		padding: 40px;
 	}
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 500px) {
 	.works {
-		width: 70%;
-	}
-}
-
-@media screen and (max-width: 640px) {
-	.works {
-		width: 60%;
-		grid-template-columns: repeat(1, 1fr);
+		grid-template: repeat(6, 1fr) / repeat(1, 1fr);
+		padding: 20px;
 	}
 }
 </style>
