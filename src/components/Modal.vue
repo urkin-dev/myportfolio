@@ -34,6 +34,7 @@ export default {
 	background-color: #fff;
 	overflow: hidden;
 	display: flex;
+	padding: 15px;
 
 	@media screen and (max-width: 690px) {
 		width: 90%;

@@ -2,7 +2,10 @@
 	<div class="works-wrapper">
 		<div class="works">
 			<a class="work" v-for="work in works" :key="work.id">
-				<img :src="work.img" alt="work image" @click="() => toggle(work.id)" />
+				<div class="work__polaroid">
+					<img :src="work.img" alt="work image" @click="() => toggle(work.id)" />
+					<div class="work__caption">{{ work.title }}</div>
+				</div>
 			</a>
 		</div>
 		<transition name="fade">
@@ -86,25 +89,62 @@ a {
 	display: grid;
 	grid-auto-flow: column;
 	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
-	gap: 10px;
+	gap: 20px;
 	height: 100%;
 	padding: 80px;
 
-	&:hover .work:not(:hover) {
-		filter: brightness(0.5);
-	}
-
 	.work {
-		text-decoration: none;
 		height: 100%;
 		overflow: hidden;
 		transition: 0.3s;
+		filter: grayscale(100%);
+
+		&:nth-of-type(4n + 1) {
+			transform: scale(0.8, 0.8) rotate(5deg);
+			transition: all 0.35s;
+		}
+
+		&:nth-of-type(4n + 2) {
+			transform: scale(0.8, 0.8) rotate(-5deg);
+			transition: all 0.35s;
+		}
+
+		&:nth-of-type(4n + 4) {
+			transform: scale(0.8, 0.8) rotate(3deg);
+			transition: all 0.35s;
+		}
+
+		&:nth-of-type(4n + 3) {
+			transform: scale(0.8, 0.8) rotate(-3deg);
+			transition: all 0.35s;
+		}
+
+		&:hover {
+			filter: none;
+			transform: scale(1, 1) rotate(0deg) !important;
+			transition: all 0.35s;
+		}
+
+		&__polaroid {
+			background-color: #fff;
+			padding: 1rem;
+			box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+			height: 100%;
+		}
+
+		&__caption {
+			font-size: 1rem;
+			text-align: right;
+			margin-top: 3px;
+			line-height: 2em;
+			color: #000;
+			font-family: Share;
+		}
 
 		img {
 			width: 100%;
-			height: 100%;
+			height: 85%;
 			object-fit: cover;
-			border-radius: 5px;
 			cursor: pointer;
 		}
 	}
@@ -117,10 +157,30 @@ a {
 	}
 }
 
+@media screen and (max-width: 710px) {
+	.work {
+		transform: scale(1, 1) rotate(0deg) !important;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.works {
 		grid-template: repeat(6, 1fr) / repeat(1, 1fr);
 		padding: 20px;
+
+		.work {
+			&__polaroid {
+				padding: 0.5rem;
+			}
+
+			img {
+				height: 100%;
+			}
+		}
+
+		.work__caption {
+			display: none;
+		}
 	}
 }
 </style>

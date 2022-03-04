@@ -76,10 +76,11 @@
 				</ul>
 				<p class="letter-back__title">Hard skills</p>
 				<ul>
-					<li><strong>Frontend: </strong>React.js, Typescript, Vue.js, MobX, Redux (redux-toolkit), HTML&CSS</li>
+					<li><strong>Frontend: </strong>React, Typescript, Vue, MobX, Redux, HTML&CSS</li>
+					<li><strong>Mobile: </strong>React Native</li>
 					<li><strong>Backend: </strong>Django, Node</li>
 					<li><strong>Environment: </strong>GitLab, GitHub</li>
-					<li><strong>Data: </strong>PostgreSQL, SQL Server</li>
+					<li><strong>Data: </strong>PostgreSQL</li>
 					<li><strong>Design: </strong>Figma, Adobe Illustrator</li>
 				</ul>
 			</div>
