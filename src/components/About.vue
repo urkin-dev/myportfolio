@@ -59,7 +59,9 @@
 					<span class="iconify" data-icon="akar-icons:vue-fill" style="color: #333" data-width="30" data-height="30" />
 				</div>
 			</div>
-			<button @click="showBack" class="letter-front__next-button"></button>
+			<button @click="showBack" class="letter-front__next-button">
+				<ButtonBG class="letter-front__next-button-bg" />
+			</button>
 		</dev>
 		<div class="letter-back">
 			<LetterBack2 class="letter-back__bg" />
@@ -87,7 +89,9 @@
 					<li><strong>Design: </strong>Figma, Adobe Illustrator</li>
 				</ul>
 			</div>
-			<button @click="showFront" class="letter-front__prev-button"></button>
+			<button @click="showFront" class="letter-front__prev-button">
+				<ButtonBG class="letter-front__prev-button-bg" />
+			</button>
 		</div>
 	</div>
 </template>
@@ -97,6 +101,7 @@ import CurveName from '@/assets/img/CurveName.svg?inline'
 import LetterBack from '@/assets/img/letterBack.svg?inline'
 import LetterBack2 from '@/assets/img/letterBack(2).svg?inline'
 import PapperPiece from '@/assets/img/papperPiece.svg?inline'
+import ButtonBG from '@/assets/img/button.svg?inline'
 
 export default {
 	name: 'About',
@@ -104,7 +109,8 @@ export default {
 		CurveName,
 		LetterBack,
 		LetterBack2,
-		PapperPiece
+		PapperPiece,
+		ButtonBG
 	},
 	methods: {
 		showBack() {
@@ -314,10 +320,6 @@ export default {
 
 	&-front__next-button,
 	&-front__prev-button {
-		background-color: transparent;
-		background-image: url('../assets/img/button.svg');
-		background-repeat: no-repeat;
-		background-size: contain;
 		width: 30px;
 		height: 40px;
 		padding: 0;
@@ -327,6 +329,15 @@ export default {
 		outline: none;
 		cursor: pointer;
 		bottom: 15px;
+		background-color: transparent;
+
+		&-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
 	}
 
 	&-front__next-button {
