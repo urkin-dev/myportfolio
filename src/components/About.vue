@@ -1,6 +1,7 @@
 <template>
 	<div class="letter">
-		<div class="letter-front">
+		<dev class="letter-front">
+			<LetterBack class="letter-front__bg" />
 			<h2 class="letter-front__title">About me</h2>
 			<div class="letter-front__name">
 				<CurveName />
@@ -16,6 +17,7 @@
 				<h3 class="position__title">Web developer</h3>
 			</div>
 			<div class="contacts">
+				<PapperPiece class="contacts__bg" />
 				<p class="contacts__title">Contacts</p>
 				<div class="contacts__content">
 					<p>Telegram: @yurk1n</p>
@@ -58,8 +60,9 @@
 				</div>
 			</div>
 			<button @click="showBack" class="letter-front__next-button"></button>
-		</div>
+		</dev>
 		<div class="letter-back">
+			<LetterBack2 class="letter-back__bg" />
 			<div class="letter-back__content">
 				<p class="letter-back__title">Hello there!</p>
 				<ul>
@@ -91,11 +94,17 @@
 
 <script>
 import CurveName from '@/assets/img/CurveName.svg?inline'
+import LetterBack from '@/assets/img/letterBack.svg?inline'
+import LetterBack2 from '@/assets/img/letterBack(2).svg?inline'
+import PapperPiece from '@/assets/img/papperPiece.svg?inline'
 
 export default {
 	name: 'About',
 	components: {
-		CurveName
+		CurveName,
+		LetterBack,
+		LetterBack2,
+		PapperPiece
 	},
 	methods: {
 		showBack() {
@@ -162,9 +171,10 @@ export default {
 	}
 
 	&-front {
-		background-image: url('../assets/img/letterBack.svg');
-		background-size: 100%;
-		background-repeat: no-repeat;
+		&__bg {
+			position: absolute;
+			z-index: -999;
+		}
 
 		.position {
 			background: #fef5e4;
@@ -197,13 +207,20 @@ export default {
 			max-width: 320px;
 			max-height: 250px;
 			overflow: hidden;
-			background-image: url('../assets/img/papperPiece.svg');
-			background-repeat: no-repeat;
-			background-size: 100%;
 			margin: 0 auto;
 			display: flex;
 			flex-direction: column;
 			padding: 40px;
+			position: relative;
+
+			&__bg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: -998;
+			}
 
 			&__title {
 				padding: 0;
@@ -279,9 +296,11 @@ export default {
 
 	&-back {
 		transform: rotateY(180deg);
-		background-image: url('../assets/img/letterBack(2).svg');
-		background-size: 100%;
-		background-repeat: no-repeat;
+
+		&__bg {
+			position: absolute;
+			z-index: -997;
+		}
 
 		&__content {
 			padding: 20px 50px;

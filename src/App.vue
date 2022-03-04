@@ -84,7 +84,7 @@ export default {
 					id: 4,
 					title: 'Time Museum in Decetraland Metaverse',
 					description:
-						'This project was created for the Maff hackaton dedicated to metauniverses. We used decentraland to build it. This project was ranked top 6',
+						'This project was created for the Maff hackaton dedicated to metauniverses. We used decentraland SDK to build it. This project was ranked top 6',
 					src: 'https://time-museum-tau.vercel.app',
 					img: require('./assets/img/time-museum.png')
 				},
@@ -92,14 +92,14 @@ export default {
 					id: 5,
 					title: 'University project, Fizruk',
 					description:
-						"I'm still working on this project refactor. We created this project for the department of physical education at my university. We wanted to create a project that would be easy to maintain and update",
+						"I'm still working on this university project. We created this project for the department of physical education at my university. We wanted to create a project that would be easy to maintain and update",
 					src: 'http://fizruk.std-670.ist.mospolytech.ru/',
 					img: require('./assets/img/Fizrruk.png')
 				},
 				{
 					id: 6,
 					title: 'poVoenke',
-					description: "I'm currently working at this moblie application as junior react-native developer.",
+					description: "I'm currently working at this project part-time as a junior react-native developer",
 					src: 'https://play.google.com/store/apps/details?id=ru.povoenke',
 					img: require('./assets/img/povoenke.png')
 				}
