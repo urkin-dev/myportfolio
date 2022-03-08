@@ -2,7 +2,7 @@
 	<div id="app" @mousemove="parallax">
 		<!-- SVG wrapps -->
 		<div class="draw parallax-element" data-speed="2">
-			<Draw />
+			<Draw class="Drawsvg" />
 		</div>
 		<div class="sun parallax-element" data-speed="5">
 			<Sun />
@@ -125,8 +125,8 @@ export default {
 				const x = (window.innerWidth - e.pageX * speed) / 100
 				const y = (window.innerHeight - e.pageY * speed) / 100
 
-				draw.style.transform = `translateX(-${x}px) translateY(${y}px) scale(1.1)`
-				tree.style.transform = `translateX(${x}px) translateY(${y}px)`
+				draw.style.transform = `translateX(-${x}px) translateY(${y}px) scale(1.1) translate3d(0, 0, 0)`
+				tree.style.transform = `translateX(${x}px) translateY(${y}px) translate3d(0, 0, 0)`
 			})
 		}
 	}

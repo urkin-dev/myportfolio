@@ -31,8 +31,8 @@ body {
 	width: 100%;
 	z-index: 1;
 	bottom: -5px;
-	transform: scale(1.1);
 	transition: 1s filter;
+	transform: scale(1.1) translate3d(0, 0, 0);
 }
 
 .tree {
@@ -42,17 +42,19 @@ body {
 	width: 53%;
 	z-index: 3;
 	transition: 1s filter;
+	transform: translate3d(0, 0, 0);
+}
+
+.fp-viewing-Page1 .tree,
+.fp-viewing-Page1 .draw {
+	filter: brightness(100%);
 }
 
 .fp-viewing-Page2 .tree,
-.fp-viewing-Page4 .tree {
-	filter: brightness(0.2);
-}
-
-// Darken 2 and 4 page
+.fp-viewing-Page4 .tree,
 .fp-viewing-Page2 .draw,
 .fp-viewing-Page4 .draw {
-	filter: brightness(0.2);
+	filter: brightness(20%);
 }
 
 .fp-viewing-Page2 #app::after,
