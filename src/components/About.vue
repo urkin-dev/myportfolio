@@ -67,17 +67,14 @@
 			<LetterBack2 class="letter-back__bg" />
 			<div class="letter-back__content">
 				<p class="letter-back__title">Hello there!</p>
-				<ul>
-					<li>
-						I'm Ivan. I consider myself as a frontend developer but I also have expirience in mobile & backend
-						development
-					</li>
+				<ul class="letter-back__about-list">
+					<li>I'm frontend developer with expirience in mobile & backend development</li>
 					<li>I'm based in Russia, Moscow</li>
-					<li>Currently working on a react-native mobile application as junior frontend developer</li>
+					<li>Currently working on a react-native mobile application as a frontend developer</li>
 					<li>I'm on third year of Moscow Politech university</li>
 					<li>I'm always open to new opportunities and challenges</li>
-					<li>I love read books and tech articles</li>
 					<li>I'm confident in my technical English skills (pls don't ask me to speak)</li>
+					<li>I love Pizza</li>
 				</ul>
 				<p class="letter-back__title">Hard skills</p>
 				<ul>
@@ -173,6 +170,38 @@ export default {
 		ul {
 			padding: 0;
 			padding-left: 20px;
+		}
+
+		&__about-list {
+			list-style: none;
+
+			li {
+				text-indent: -1.7rem;
+			}
+
+			li:nth-child(1)::before {
+				content: '👋🏼 ';
+			}
+
+			li:nth-child(2)::before {
+				content: '🗺️ ';
+			}
+
+			li:nth-child(3)::before {
+				content: '🔭 ';
+			}
+			li:nth-child(4)::before {
+				content: '🎓 ';
+			}
+			li:nth-child(5)::before {
+				content: '⚔️ ';
+			}
+			li:nth-child(6)::before {
+				content: '🗽 ';
+			}
+			li:nth-child(7)::before {
+				content: '🍕 ';
+			}
 		}
 	}
 
@@ -405,6 +434,12 @@ export default {
 
 			ul {
 				margin: 0;
+			}
+
+			&__about-list {
+				li {
+					text-indent: -1.3rem;
+				}
 			}
 		}
 

@@ -63,7 +63,7 @@ export default {
 	}
 
 	&__description {
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Nunito', sans-serif;
 		color: rgb(63, 63, 63);
 	}
 
