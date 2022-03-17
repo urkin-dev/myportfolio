@@ -17,7 +17,6 @@
 				<div class="main__content">
 					<h1 class="main-title">Hi, I'm Ivan</h1>
 					<p class="subtitle">Frontend/Mobile Developer</p>
-					<p class="desc">❤️☕🍕</p>
 				</div>
 			</div>
 			<div class="section">
