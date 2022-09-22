@@ -78,7 +78,7 @@
 				</ul>
 				<p class="letter-back__title">Hard skills</p>
 				<ul>
-					<li><strong>Frontend: </strong>React, Typescript, Vue, MobX, Redux, HTML&CSS</li>
+					<li><strong>Frontend: </strong>React, Typescript, Vue, MobX, Redux, redux-toolkit HTML&CSS</li>
 					<li><strong>Mobile: </strong>React Native</li>
 					<li><strong>Backend: </strong>Django, Node</li>
 					<li><strong>Environment: </strong>GitLab, GitHub</li>
